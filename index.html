@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresher Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Resetting default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Header and Navbar Styles */
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
+            color: #212529;
+            transition: color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            margin: 20px 0;
+            color: #6c757d;
+            font-size: 1rem;
+        }
+
+        .cta-buttons {
+            margin-top: 20px;
+        }
+
+        .cta-buttons .btn {
+            margin: 5px;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 30px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .hero-image-container {
+            flex: 1 1 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9ecef;
+            border-radius: 500px;
+            padding: 50px;
+            width: 500px;
+            height: 500px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInLeft 1.5s ease-in-out;
+        }
+
+        /* Social Links Styles */
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #007bff;
+            margin: 5px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+            transform: scale(1.2);
+        }
+
+        .social-links i {
+            padding: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links .fa-linkedin {
+            color: #0077b5;
+        }
+
+        .social-links .fa-instagram {
+            color: #e4405f;
+        }
+
+        /* Icon Colors */
+        .icon-html { color: #e34c26; }
+        .icon-css { color: #1572b6; }
+        .icon-js { color: #f7df1e; }
+        .icon-php { color: #777bb3; }
+        .icon-java { color: #f89820; }
+        .icon-linux { color: #000000; }
+        .icon-dbms { color: #5f5f5f; }
+        .icon-mysql { color: #00758f; }
+
+        /* About Section Styles */
+        .about {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #212529;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #6c757d;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section Styles */
+        .skills {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            color: #212529;
+            margin-bottom: 20px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill {
+            text-align: center;
+            max-width: 150px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            font-size: 1rem;
+            color: #212529;
+        }
+
+        /* Projects Section Styles */
+        .projects {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .projects h2 {
+            font-size: 2rem;
+            color: #212529;
+            margin-bottom: 40px;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            text-align: left;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .project:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #212529;
+            color: #ffffff;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .skill-list, .project-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .skill i {
+                font-size: 2rem;
+            }
+
+            .project img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Hello, I'm Beatrice mathew</h1>
+                <p>Welcome to my portfolio. I am a passionate web developer with skills in HTML, CSS, JavaScript, PHP, and more.</p>
+                <div class="cta-buttons">
+                    <a href="resume.pdf" class="btn btn-primary" target="_blank">View Resume</a>
+                    <a href="mailto:your.beatricesinimol@gmail.com" class="btn btn-secondary">Contact</a>
+             
+            </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/beatrice-mathew" target="_blank" class="fa-brands fa-linkedin"></a>
+                    <a href="https://www.instagram.com/bea_tr.ice?" target="_blank" class="fa-brands fa-instagram"></a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="hero (2).png" alt="Profile Image" class="hero-image">
+            </div>
+        </div>
+    </header>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>As a BCA student with a strong background in programming and web development, I have developed a keen interest in creating secure and efficient web applications. My practical experience includes working on various projects that involve HTML, CSS, JavaScript, PHP, and MySQL.</p>
+    </section>
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skill-list">
+            <div class="skill">
+                <i class="fa-brands fa-html5 icon-html"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill">
+                <i class="fa-brands fa-css3 icon-css"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <i class="fa-brands fa-js icon-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <i class="fa-brands fa-php icon-php"></i>
+                <p>PHP</p>
+            </div>
+            <div class="skill">
+                <i class="fa-brands fa-java icon-java"></i>
+                <p>Java</p>
+            </div>
+            <div class="skill">
+                <i class="fa-brands fa-linux icon-linux"></i>
+                <p>Linux</p>
+            </div>
+            <div class="skill">
+                <i class="fa-solid fa-database icon-dbms"></i>
+                <p>DBMS</p>
+            </div>
+            <div class="skill">
+                <i class="fa-brands fa-mysql icon-mysql"></i>
+                <p>MySQL</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <img src="load.png" alt="Project 1">
+                <h3>Load Shift</h3>
+                <p>The ‘Load Swift’ project is focused on developing an efficient and user-friendly system to 
+                    manage the operations of a load exporting system.</p>
+            </div>
+           
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 beatrice mathew. All rights reserved.</p>
+        <p>developed by <a href="https://www.instagram.com/code_sync_designz">code code_sync_designz</a></a></p>
+    </footer>
+</body>
+</html>
